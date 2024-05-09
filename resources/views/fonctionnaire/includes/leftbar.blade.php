@@ -5,7 +5,20 @@
         <!--- Sidemenu -->
         <div id="sidebar-menu">
             <ul>
-
+                @if(Auth::guard("fonctionnaire")->user()->tache === "edition")
+                <li class="has_sub">
+                    <a href="{{route('fonctionnaire.index')}}" class="waves-effect"><i
+                        class="zmdi zmdi-view-dashboard"></i><span> DEUG</span> </a>
+                </li>
+                <li class="has_sub">
+                    <a href="{{route('fonctionnaire.to_enatente')}}" class="waves-effect"><i
+                    class="zmdi zmdi-view-dashboard"></i><span>LICENCE</span> </a>
+                </li>
+                <li class="has_sub">
+                    <a href="{{route('fonctionnaire.pret')}}" class="waves-effect"><i
+                    class="zmdi zmdi-view-dashboard"></i><span>MASTER</span> </a>
+                </li>
+                @else
                 <li class="has_sub">
                     <a href="{{route('fonctionnaire.index')}}" class="waves-effect"><i
                         class="zmdi zmdi-view-dashboard"></i><span> En cour </span> </a>
@@ -18,6 +31,7 @@
                     <a href="{{route('fonctionnaire.pret')}}" class="waves-effect"><i
                     class="zmdi zmdi-view-dashboard"></i><span>Traité</span> </a>
                 </li>
+
                 <li class="has_sub">
                     <a href="{{route('fonctionnaire.refus')}}" class="waves-effect"><i
                     class="zmdi zmdi-view-dashboard"></i><span>Refusé</span> </a>
@@ -41,6 +55,7 @@
             </li>
             @endif
             </ul>
+            @endif
             <div class="clearfix"></div>
         </div>
         <!-- Sidebar -->

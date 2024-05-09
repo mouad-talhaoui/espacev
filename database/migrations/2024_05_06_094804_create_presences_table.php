@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('codapo');
             $table->string('id_planning');
             $table->string('id_local');
+            $table->string('observateur');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("cin");
             $table->string("email");
             $table->string("password");
-            $table->enum("tache",["retrait_bac","attestation","diplome","edition_licence","edition_deug","edition_master","bourse","master","multitache"])->default("multitache");
+            $table->enum("tache",["retrait_bac","attestation","diplome","edition","bourse","master","multitache"])->default("multitache");
             $table->enum('password_change', ['Oui', 'Non'])->default('Non');
             $table->timestamps();
         });

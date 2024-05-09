@@ -38,11 +38,11 @@ class FonctionnairController extends Controller
             $demandes=demendeur::where("type_demande","bourse")->get();
             return view("fonctionnaire.bourse",compact("demandes"));
         }
-        elseif(Auth::guard("fonctionnaire")->user()->tache === "edition_licence")
+        elseif(Auth::guard("fonctionnaire")->user()->tache === "edition")
         {
-            $diplomes=diplome::where("type_deplome","licence")->where("date_edition","NON")
+            $diplomes=diplome::where("type_deplome","deug")->where("date_edition","NON")
             ->where("date_deliberation",'not like',"NULL")->get();
-            return view("fonctionnaire.edition.licence",compact("diplomes"));
+            return view("fonctionnaire.edition.deug",compact("diplomes"));
         }
         elseif(Auth::guard("fonctionnaire")->user()->tache === "diplome")
         {
@@ -157,6 +157,12 @@ class FonctionnairController extends Controller
             $demandes=demendeur::where("etat_demande","en_attente")->where("type_demande","like","bac_%")->get();;
              return view("fonctionnaire.retrait_bac.enattente",compact("demandes"));
         }
+        if(Auth::guard("fonctionnaire")->user()->tache === "edition")
+        {
+            $diplomes=diplome::where("type_deplome","licence")->where("date_edition","NON")
+            ->where("date_deliberation",'not like',"NULL")->get();
+            return view("fonctionnaire.edition.licence",compact("diplomes"));
+        }
         elseif(Auth::guard("fonctionnaire")->user()->tache === "master")
         {
          $demandes=demendeur::where("etat_demande","en_attente")->where(function ($query) {
@@ -200,6 +206,12 @@ class FonctionnairController extends Controller
             $demandes=demendeur::where("etat_demande","pret")->where("type_demande","like","bac_%")->get();
              return view("fonctionnaire.retrait_bac.pret",compact("demandes"));
         }
+        if(Auth::guard("fonctionnaire")->user()->tache === "edition")
+        {
+            $diplomes=diplome::where("type_deplome","master")->where("date_edition","NON")
+            ->where("date_deliberation",'not like',"NULL")->get();
+            return view("fonctionnaire.edition.master",compact("diplomes"));
+        }
         elseif(Auth::guard("fonctionnaire")->user()->tache === "master")
         {
          $demandes=demendeur::where("etat_demande","pret")
@@ -222,7 +234,7 @@ class FonctionnairController extends Controller
                ->orWhere("type_demande","deug")
                ->orWhere("type_demande","master");
           })->get();
-         return view("fonctionnaire.master.pret",compact("demandes"));
+         return view("fonctionnaire.diplome.pret",compact("demandes"));
         }
         elseif(Auth::guard("fonctionnaire")->user()->tache === "attestation")
         {
@@ -368,6 +380,7 @@ class FonctionnairController extends Controller
        }
     }
     public function excel_diplome(Request $request){
+
         try{
 
         $request->validate([
@@ -378,7 +391,7 @@ class FonctionnairController extends Controller
             return redirect()->route("fonctionnaire.to_enatente")->with(
             [
             "alert"=>'danger',
-             "msg"=>$result 
+             "msg"=>$result
             ]);
         }
         return redirect()->back()->with([

@@ -14,20 +14,7 @@
                     <div class="page-title-box">
                         <h4 class="page-title">Retrait Bac</h4>
                         <div class="clearfix"></div>
-                        <form action="{{route('fonctionnaire.activer_between')}}" method="post">
-                            @csrf
-                            <input type="date" placeholder="debut" name="date_debut" required>
-                            <br>
-                            <input type="date" placeholder="fin" name="date_fin" required>
-                            <br>
-                            <div class="form-group">
-                                <label for="option1">Relvé note</label>
-                                <input type="radio" name="myOption" id="option1" value="releve_note_master">
-                                <label for="option2">Attestation d'inscription</label>
-                                <input type="radio" name="myOption" id="option2" value="attestation_master">
-                            </div>
-                            <input type="submit" value="Activer">
-                        </form>
+
                     </div>
                 </div>
             </div>

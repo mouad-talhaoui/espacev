@@ -19,7 +19,7 @@ use Illuminate\Support\Collection;
                 $diplome = diplome::find($row['id']);
                 if (!is_null($diplome)) {
                     $diplome->update([
-                        'date_edition' => $row['date_edition'],
+                        'date_edition' =>$row['edition'],
                      ]);
                 }else{
                     return "Vérifiez le fichier que vous essayez de télécharger";

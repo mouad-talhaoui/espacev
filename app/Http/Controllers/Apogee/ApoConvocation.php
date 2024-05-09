@@ -17,6 +17,7 @@ use App\Models\Planning;
 use App\Models\Convocation;
 use App\Models\ReclamationNote;
 use App\Models\att_reussit;
+use App\Models\diplome;
 
 class ApoConvocation extends Controller
 {
@@ -457,6 +458,56 @@ class ApoConvocation extends Controller
                         'id' => $row['id'],
                         'date_validation' => $row['date_validation'],
                         'codapo' => $row['codapo'],
+                        'filiere_id' => $row['filiere_id'],
+                    ]
+                );
+            }
+        });
+        // Delete the temporary file after processing
+        unlink(storage_path("app/{$filePath}"));
+        return redirect()->back()->with('success', 'CSV import successful!');
+    }
+
+    public function gestion_diplomes()
+    {
+        return view("apogee.diplomes");
+    }
+
+    public function store_diplomes(Request $request)
+    {
+        // Disable the maximum execution time limit
+        set_time_limit(0);
+        // Validate the uploaded file, ensure it's a CSV file, etc.
+        $request->validate([
+            'import_file' => 'required|mimes:csv,txt|max:2048',
+        ]);
+
+        // Save the uploaded file to a temporary location
+        $file = $request->file('import_file');
+        $filePath = $file->storeAs('temp', 'import.csv');
+        $csv = Reader::createFromPath(storage_path("app/{$filePath}"), 'r');
+        $csv->setHeaderOffset(0); // Adjust the header offset if your CSV has headers
+
+        // Create LazyCollection from the CSV file
+        $records = LazyCollection::make(function () use ($csv) {
+            foreach ($csv->getRecords() as $record) {
+                yield $record;
+            }
+        });
+
+        // Chunk size for processing in batches
+        $chunkSize = 100;
+
+        // Process records in chunks
+        $records->chunk($chunkSize)->each(function ($chunk) {
+            foreach ($chunk as $row) {
+
+                diplome::updateOrCreate(
+                    ['id' => $row['id']],
+                    [
+                        'type_deplome' => $row['type_deplome'],
+                        'codapo' => $row['codapo'],
+                        'date_deliberation' => $row['date_deliberation'],
                         'filiere_id' => $row['filiere_id'],
                     ]
                 );

@@ -101,6 +101,9 @@ Route::prefix('apogee')->name("apogee.")->group(static function () {
         //gestion attestation de reussite
         Route::get('attes', [ApoConvocation::class, 'gestion_attstation_reussite'])->name('attes');
         Route::post('store/attes',[ApoConvocation::class,"store_attstation_reussite"])->name('store.attes');
+        //gestion des diplomes
+        Route::get('diplomes', [ApoConvocation::class, 'gestion_diplomes'])->name('diplomes');
+        Route::post('store/diplomes',[ApoConvocation::class,"store_diplomes"])->name('store.diplomes');
 });
 
 });

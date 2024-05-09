@@ -87,6 +87,11 @@
                             class="zmdi zmdi-assignment-o"></i><span>Attestations de réussite</span> </a>
                 </li>
 
+                <li class="has_sub">
+                    <a href="{{ route('apogee.diplomes') }}" class="waves-effect"><i
+                            class="zmdi zmdi-assignment-o"></i><span>Diplômes</span> </a>
+                </li>
+
             </ul>
             <div class="clearfix"></div>
         </div>

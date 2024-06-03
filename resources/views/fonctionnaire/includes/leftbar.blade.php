@@ -21,37 +21,37 @@
                 @else
                 <li class="has_sub">
                     <a href="{{route('fonctionnaire.index')}}" class="waves-effect"><i
-                        class="zmdi zmdi-view-dashboard"></i><span> En cour </span> </a>
+                        class="zmdi zmdi-calendar-note"></i><span>EN COUR</span></a>
                 </li>
                 <li class="has_sub">
                     <a href="{{route('fonctionnaire.to_enatente')}}" class="waves-effect"><i
-                    class="zmdi zmdi-view-dashboard"></i><span>En attents</span> </a>
+                    class="zmdi zmdi-calendar-alt"></i><span>EN ATTENTE</span> </a>
                 </li>
                 <li class="has_sub">
                     <a href="{{route('fonctionnaire.pret')}}" class="waves-effect"><i
-                    class="zmdi zmdi-view-dashboard"></i><span>Traité</span> </a>
+                    class="zmdi zmdi-calendar-check"></i><span>TRAITÉ</span> </a>
                 </li>
 
                 <li class="has_sub">
                     <a href="{{route('fonctionnaire.refus')}}" class="waves-effect"><i
-                    class="zmdi zmdi-view-dashboard"></i><span>Refusé</span> </a>
+                    class="zmdi zmdi-calendar-close"></i><span>REFUSÉ</span> </a>
                 </li>
             @if(Auth::guard("fonctionnaire")->user()->tache === "retrait_bac")
             <li class="has_sub">
                 <a href="{{route('fonctionnaire.retourbac')}}" class="waves-effect"><i
-                class="zmdi zmdi-view-dashboard"></i><span>الشواهد المرجعة</span> </a>
+                class="zmdi zmdi-view-dashboard"></i><span>RETOUR</span> </a>
             </li>
             @endif
             @if (Auth::guard("fonctionnaire")->user()->tache === "retrait_bac")
             <li class="has_sub">
                 <a href="{{route('fonctionnaire.rp')}}" class="waves-effect"><i
-                class="zmdi zmdi-view-dashboard"></i><span>RP</span> </a>
+                class="zmdi zmdi-view-dashboard"></i><span>RETRAIT PROVISOIRE</span> </a>
             </li>
             @endif
             @if (Auth::guard("fonctionnaire")->user()->tache === "retrait_bac")
             <li class="has_sub">
                 <a href="{{route('fonctionnaire.rdc')}}" class="waves-effect"><i
-                class="zmdi zmdi-view-dashboard"></i><span>RDC</span> </a>
+                class="zmdi zmdi-view-dashboard"></i><span>RETRAIT DÉFINITIVE</span> </a>
             </li>
             @endif
             </ul>

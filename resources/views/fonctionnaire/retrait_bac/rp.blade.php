@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">RP</h4>
+                        <h4 class="page-title">RETRAIT PROVISOIRE</h4>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -22,7 +22,6 @@
             <div class="row">
                 <div class="col-xs-12 col-lg-12 col-xl-12">
                     <div class="card-box">
-                        <h4 class="header-title m-t-0 m-b-20">Espace de fonctionnaire</h4>
                             <table id="datatable" class="table table-striped table-bordered" >
                                 <thead>
                                 <tr>

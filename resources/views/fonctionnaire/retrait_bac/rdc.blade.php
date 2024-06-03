@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">RDC</h4>
+                        <h4 class="page-title">RETRAIT DÉFINITIF</h4>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -22,7 +22,6 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box table-responsive">
-                        <h4 class="header-title m-t-0 m-b-20">Espace de fonctionnaire</h4>
                         <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0"
                         width="100%">
                                 <thead>

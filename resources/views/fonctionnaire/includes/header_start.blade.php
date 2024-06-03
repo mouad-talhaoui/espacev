@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- App title -->
-    <title>Uplon - Responsive Admin Dashboard Template</title>
+    <title>Espace Fonctionnaire</title>
 
 
     <!-- Switchery css -->

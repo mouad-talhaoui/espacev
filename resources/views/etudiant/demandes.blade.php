@@ -135,7 +135,8 @@
                                     <th>Type de demande</th>
                                     <th>date de demande</th>
                                     <th>Statut</th>
-                                    <th></th>
+                                    <th>Classement de demande</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -184,6 +185,11 @@
                                         </td>
                                         <td>{{$demande->created_at}}</td>
                                         <td>{{$demande->etat_demande}}</td>
+                                        <td>
+                                        @if($demande->num_archive === 'NULL')
+                                        
+                                        @else
+                                        {{$demande->num_archive}} @endif</td>
                                         <td>
                                             @if($demande->etat_demande ==="encour")
                                              <form action="{{route('etudiant.deletedemande',$demande->id)}}" method="post">

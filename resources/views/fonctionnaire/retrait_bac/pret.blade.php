@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Retrait Bac</h4>
+                        <h4 class="page-title">LES DEMANDES DE RETRAIT DE BACCALAURÉAT - Traité</h4>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                                             @if($demande->type_demande==="bac_rp")
                                             <form action="{{ route('fonctionnaire.retour_bac', $demande->id) }}" method="post">
                                                 @csrf
-                                                <input type="submit" value="OUI">
+                                                <button type="submit" class="btn btn-primary">OUI</button>
                                             </form>
                                             @endif
                                         </td>

@@ -76,8 +76,8 @@
                                         <td>
                                             <form action="{{ route('fonctionnaire.traite_bac', $demande->id) }}" method="post">
                                                 @csrf
-                                            <input type="text" name="num_arrchive" id="" required>
-                                            <input type="submit" value="Traité">
+                                            <input type="text" class="form-control" name="num_arrchive" id="" required>
+                                            <button type="submit" class="btn btn-primary">Traiter</button>
                                             </form>
                                         </td>
                                         <td>

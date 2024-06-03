@@ -25,9 +25,10 @@
                         <form action="{{route('fonctionnaire.excel_diplome')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="excel_diplome" required >
-                            <input type="submit" value="diplôme prêt">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Importer
+                            </button>
                         </form>
-                        <h4 class="header-title m-t-0 m-b-20">Espace de fonctionnaire</h4>
+                        <br>
                         <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0"
                             width="100%">
                                 <thead>

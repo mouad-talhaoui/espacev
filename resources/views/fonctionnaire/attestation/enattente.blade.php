@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">ATtestation</h4>
+                        <h4 class="page-title">LES ATTESTATIONS</h4>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -29,14 +29,18 @@
                     @endif
                         <form action="{{route('fonctionnaire.to_encour')}}" method="post">
                             @csrf
-                            <input type="submit" value="RTOUR A ETAT ُENCOUR">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Changer l'état à 'ENCOUR'
+                            </button>
                         </form>
+                        <br>
+                        <h5>Importer la liste pour changer l'état en masse:</h5><br>
                         <form action="{{route('fonctionnaire.excel_traite')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="excel_traite" required >
-                            <input type="submit" value="Change Etat">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Importer
+                            </button>
                         </form>
-                        <h4 class="header-title m-t-0 m-b-20">Espace de fonctionnaire</h4>
+                        <br><br>
                             <table id="datatable" class="table table-striped table-bordered" >
                                 <thead>
                                 <tr>

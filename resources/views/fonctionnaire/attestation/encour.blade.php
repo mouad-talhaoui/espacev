@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Retrait Bac</h4>
+                        <h4 class="page-title">LES ATTESTATIONS</h4>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -24,9 +24,10 @@
                     <div class="card-box">
                         <form action="{{route('fonctionnaire.to_enatente')}}" method="post">
                             @csrf
-                            <input type="submit" value="change etat a en attente">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Changer l'état à 'En attente'
+                            </button>
                         </form>
-                        <h4 class="header-title m-t-0 m-b-20">Espace de fonctionnaire</h4>
+                        <br>
                             <table id="datatable" class="table table-striped table-bordered" >
                                 <thead>
                                 <tr>

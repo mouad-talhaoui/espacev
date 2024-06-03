@@ -12,28 +12,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Retrait Bac</h4>
+                        <h4 class="page-title">LES ATTESTATIONS</h4>
                         <div class="clearfix"></div>
-                        <form action="{{route('fonctionnaire.activer_between')}}" method="post">
-                            @csrf
-                            <input type="date" placeholder="debut" name="date_debut" required>
-                            <br>
-                            <input type="date" placeholder="fin" name="date_fin" required>
-                            <br>
-                            <div class="form-group">
-                                <label for="option1">Relvé note</label>
-                                <input type="radio" name="myOption" id="option1" value="releve_note">
-                                <label for="option2">Attestation d'inscription</label>
-                                <input type="radio" name="myOption" id="option2" value="attestation_inscription">
-                                <label for="option2">Attestation reussit</label>
-                                <input type="radio" name="myOption" id="option3" value="attestation_reussit">
-                                <label for="option2">Attestation Deug</label>
-                                <input type="radio" name="myOption" id="option4" value="attestation_deug">
-                                <label for="option2">Attestation Licence</label>
-                                <input type="radio" name="myOption" id="option5" value="attestation_licence">
-                                </div>
-                            <input type="submit" value="Activer">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -42,7 +22,60 @@
             <div class="row">
                 <div class="col-xs-12 col-lg-12 col-xl-12">
                     <div class="card-box">
-                        <h4 class="header-title m-t-0 m-b-20">Espace de fonctionnaire</h4>
+                        <h5>Choisissez un Intervalle de Dates</h5>
+                        <div class="row">
+                            <form action="{{route('fonctionnaire.activer_between')}}" method="post" class="form-inline">
+                                @csrf
+                                   <div class="form-group">
+                                        <input type="date" placeholder="debut" name="date_debut" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" placeholder="fin" name="date_fin" class="form-control" required>
+                                    </div>
+                                    <br><br>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2">Type</label>
+                                        <div class="col-sm-10">
+                                            <div class="radio">
+                                                <input type="radio" name="myOption" id="option1" value="releve_note"
+                                                    checked>
+                                                <label for="option1">
+                                                    Relvé note
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <input type="radio" name="myOption" id="option2" value="attestation_inscription">
+                                                <label for="option2">
+                                                    Attestation d'inscription
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <input type="radio" name="myOption" id="option3" value="attestation_reussit">
+                                                <label for="option3">
+                                                    Attestation reussit
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <input type="radio" name="myOption" id="option4" value="attestation_deug">
+                                                <label for="option4">
+                                                    Attestation Deug
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <input type="radio" name="myOption" id="option5" value="attestation_licence">
+                                                <label for="option5">
+                                                    Attestation Licence
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                <button type="submit" class="btn btn-primary">Activer</button>
+                            </form>
+                    </div>
+                    <br><br>
                             <table id="datatable" class="table table-striped table-bordered" >
                                 <thead>
                                 <tr>

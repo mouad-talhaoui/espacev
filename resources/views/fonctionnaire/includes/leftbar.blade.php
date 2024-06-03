@@ -31,11 +31,6 @@
                     <a href="{{route('fonctionnaire.pret')}}" class="waves-effect"><i
                     class="zmdi zmdi-calendar-check"></i><span>TRAITÉ</span> </a>
                 </li>
-
-                <li class="has_sub">
-                    <a href="{{route('fonctionnaire.refus')}}" class="waves-effect"><i
-                    class="zmdi zmdi-calendar-close"></i><span>REFUSÉ</span> </a>
-                </li>
             @if(Auth::guard("fonctionnaire")->user()->tache === "retrait_bac")
             <li class="has_sub">
                 <a href="{{route('fonctionnaire.retourbac')}}" class="waves-effect"><i

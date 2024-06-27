@@ -15,11 +15,12 @@ class EtatImport implements ToModel,WithHeadingRow
     */
         public function model(array $row)
         {
+
             $demande = demendeur::find($row['id']);
             if (!is_null($demande)) {
                 $demande->update([
-                    'etat_demande' => $row['etat_demande'],
-                    'num_archive' => $row['num_archive'],
+                    'etat_demande' => $row['etat'],
+                    'num_archive' => $row['classement'],
                  ]);
             }else{
                 return "Vérifiez le fichier que vous essayez de télécharger";

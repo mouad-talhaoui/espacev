@@ -308,6 +308,15 @@ class FonctionnairController extends Controller
         $demande->save();
         return back();
     }
+    public function delevre(){
+        $demandes=demendeur::where("etat_demande","delevré")
+        ->where(function ($query) {
+        $query->where('type_demande',"licence")
+              ->orWhere("type_demande","deug")
+              ->orWhere("type_demande","master");
+         })->get();
+        return view("fonctionnaire.diplome.delevre",compact("demandes"));
+    }
     public function refus_bac($id){
         $demande = demendeur::find($id);
         $demande->etat_demande="refusé";

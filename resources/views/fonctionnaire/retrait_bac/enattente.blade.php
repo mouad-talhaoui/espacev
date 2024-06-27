@@ -50,18 +50,21 @@
                             <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
+                                        <th>id</th>
                                         <th>Type</th>
                                         <th>Nom</th>
                                         <th>Prenom</th>
                                         <th>date de</th>
                                         <th>Etat </th>
+                                        <th>Classement</th>
                                         <th>Num Archive </th>
-                                        <th>Num Classement</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($demandes as $demande)
                                     <tr>
+                                        <td>{{$demande->id}}</td>
                                         <td>{{$demande->nom}}</td>
                                         <td>{{$demande->prenom}}</td>
                                         <td>
@@ -77,6 +80,13 @@
                                         </td>
                                         <td>{{$demande->created_at}}</td>
                                         <td>{{$demande->etat_demande}}</td>
+                                        <td>
+                                            <form action="{{ route('fonctionnaire.traite_bac', $demande->id) }}" method="post">
+                                                @csrf
+                                            <input type="text" class="form-control" name="num_arrchive" id="" required>
+                                            <button type="submit" class="btn btn-primary">Traiter</button>
+                                            </form>
+                                        </td>
                                         <td>@php
                                             $nums = App\Models\bac::where('codapo', $demande->codapo)->orwhere("cne",$demande->cne)->get();
                                             @endphp
@@ -85,13 +95,6 @@
                                         <br>
                                         @endforeach
                                             </td>
-                                        <td>
-                                            <form action="{{ route('fonctionnaire.traite_bac', $demande->id) }}" method="post">
-                                                @csrf
-                                            <input type="text" class="form-control" name="num_arrchive" id="" required>
-                                            <button type="submit" class="btn btn-primary">Traiter</button>
-                                            </form>
-                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

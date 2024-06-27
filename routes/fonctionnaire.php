@@ -68,6 +68,7 @@ Route::prefix('fonctionnaire')->name("fonctionnaire.")->group(static function ()
     Route::post('/bac_expiree', [FonctionnairController::class, 'bac_expiree'])->name("bac_expiree");
     Route::post('/excel_traite', [FonctionnairController::class, 'excel_traite'])->name("excel_traite");
     Route::post('/excel_diplome', [FonctionnairController::class, 'excel_diplome'])->name("excel_diplome");
+    Route::get('/delevre', [FonctionnairController::class, 'delevre'])->name("delevre");
 
 });
 

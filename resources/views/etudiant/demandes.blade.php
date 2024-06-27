@@ -77,7 +77,7 @@
                                    @endif
                                    @if($diplomes != null)
                                    @foreach ($diplomes as $diplome)
-                                   @if($diplome->type_deplome=="master" && $diplome->date_edition=="OUI")
+                                   @if($diplome->type_deplome=="master")
                                    @if(!in_array(Auth::guard('etudiant')->user()->id."-master",$codes_demandes))
                                    <option value="master">
                                     RETRAIT DU DIPLÔME MASTER - سحب شهادة الماستر
@@ -91,14 +91,14 @@
                                    </option>
                                    @endif
                                    @endif
-                                   @if($diplome->type_deplome=="licence" && $diplome->date_edition=="OUI")
+                                   @if($diplome->type_deplome=="licence")
                                    @if(!in_array(Auth::guard('etudiant')->user()->id."-licence",$codes_demandes))
                                    <option value="licence">
                                     RETRAIT DU DIPLÔME DE LA LICENCE - سحب شهادة الإجازة
                                    </option>
                                    @endif
                                    @endif
-                                   @if($diplome->type_deplome=="deug" && $diplome->date_edition=="OUI")
+                                   @if($diplome->type_deplome=="deug")
                                    @if(!in_array(Auth::guard('etudiant')->user()->id."-deug",$codes_demandes))
                                    <option value="deug">
                                     RETRAIT DU DIPLÔME DEUG - سحب دبلوم الدراسات الجامعية العامة
@@ -187,7 +187,7 @@
                                         <td>{{$demande->etat_demande}}</td>
                                         <td>
                                         @if($demande->num_archive === 'NULL')
-                                        
+
                                         @else
                                         {{$demande->num_archive}} @endif</td>
                                         <td>

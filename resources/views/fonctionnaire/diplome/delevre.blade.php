@@ -31,8 +31,7 @@
                                 <th>Nom</th>
                                 <th>Prenom</th>
                                 <th>Type de Demande </th>
-                                <th>classement du demande</th>
-                                <th>Delevré</th>
+                                <th>date de delivré</th>
 
                             </tr>
                             </thead>
@@ -61,10 +60,7 @@
                                     {{$demande->num_archive}}
                                     </td>
                                     <td>
-                                        <form action="{{ route('fonctionnaire.retour_bac', $demande->id) }}" method="post">
-                                            @csrf
-                                        <input type="submit" value="OUI">
-                                        </form>
+                                       {{$demande->updated_at}}
                                     </td>
                                     </tr>
                                 @endforeach

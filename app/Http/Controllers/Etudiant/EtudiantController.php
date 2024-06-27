@@ -272,6 +272,11 @@ class EtudiantController extends Controller
                     ];
                     break;
                 case 'deug':
+                    $request->validate([
+                        'file' => 'required|mimes:pdf|max:2048',
+                    ]);
+                    $fileName = Auth::guard("etudiant")->user()->id.'.'.$request->file->extension();
+                    $request->file->move(public_path('assets\uploads\deug'), $fileName);
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
@@ -308,6 +313,11 @@ class EtudiantController extends Controller
                     ];
                     break;
                 case 'licence':
+                    $request->validate([
+                        'file' => 'required|mimes:pdf|max:2048',
+                    ]);
+                    $fileName = Auth::guard("etudiant")->user()->id.'.'.$request->file->extension();
+                    $request->file->move(public_path('assets\uploads\licence'), $fileName);
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
@@ -332,6 +342,11 @@ class EtudiantController extends Controller
                     ];
                     break;
                 case 'master':
+                    $request->validate([
+                        'file' => 'required|mimes:pdf|max:2048',
+                    ]);
+                    $fileName = Auth::guard("etudiant")->user()->id.'.'.$request->file->extension();
+                    $request->file->move(public_path('assets\uploads\master'), $fileName);
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,

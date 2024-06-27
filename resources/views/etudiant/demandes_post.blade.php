@@ -25,7 +25,7 @@
                     <div class="col-xs-12 col-lg-12 col-xl-12">
                         <div class="card-box">
                            <h4 class="header-title m-t-0 m-b-20">Votre demandes</h4>
-                            <form action="{{route('etudiant.backtodemande')}}" method="post">
+                            <form action="{{route('etudiant.backtodemande')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @switch($demande[0])
                                     @case("attestation_reussit")
@@ -197,6 +197,8 @@
                                   </div>
                                   <div class="col-xs-4 col-md-4 m-t-3">
                                       <input type="hidden" name="type_demande" value="{{$demande[0]}}">
+                                      <strong class="text-danger text-bold"> تحميل صورة الكترونية للبطاقة الوطنية للتعريف من الواجهتين بصيغة "PDF"</strong>
+                                      <input type="file" name="file" id=""  accept="application/pdf" required>
                                   </div>
                                   <div class="col-xs-4 col-md-4 m-t-3">
                                   </div>
@@ -245,6 +247,8 @@
                                   </div>
                                   <div class="col-xs-4 col-md-4 m-t-3">
                                       <input type="hidden" name="type_demande" value="{{$demande[0]}}">
+                                      <strong class="text-danger text-bold"> تحميل صورة الكترونية للبطاقة الوطنية للتعريف من الواجهتين بصيغة "PDF"</strong>
+                                      <input type="file" name="file" id=""  accept="application/pdf" required>
                                   </div>
                                   <div class="col-xs-4 col-md-4 m-t-3">
                                   </div>
@@ -261,6 +265,8 @@
                                   </div>
                                   <div class="col-xs-4 col-md-4 m-t-3">
                                       <input type="hidden" name="type_demande" value="{{$demande[0]}}">
+                                      <strong class="text-danger text-bold"> تحميل صورة الكترونية للبطاقة الوطنية للتعريف من الواجهتين بصيغة "PDF"</strong>
+                                      <input type="file" name="file" id=""  accept="application/pdf" required>
                                   </div>
                                   <div class="col-xs-4 col-md-4 m-t-3">
                                   </div>

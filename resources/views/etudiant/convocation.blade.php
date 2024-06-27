@@ -31,6 +31,7 @@
                                 <table id="datatable" class="table table-striped table-bordered" >
                                     <thead>
                                     <tr>
+                                        <th>Id</th>
                                         <th>Module</th>
                                         <th>filiére</th>
                                         <th>Semestre</th>
@@ -45,6 +46,7 @@
                                     <tbody>
                           @foreach ($queryConvocation as $convocation)
                           <tr>
+                            <td>{{$convocation->id}}</td>
                             <td>{{$convocation->ip_get_id->section_get_id->module_get_id->lib_module}}</td>
                             <td>{{$convocation->ip_get_id->section_get_id->module_get_id->filiere_get_id->libelle_diplome}}</td>
                             <td>{{$convocation->ip_get_id->section_get_id->module_get_id->semester}}</td>

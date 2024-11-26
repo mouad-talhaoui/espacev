@@ -51,13 +51,13 @@
                                 <thead>
                                     <tr>
                                         <th>id</th>
-                                        <th>Type</th>
                                         <th>Nom</th>
                                         <th>Prenom</th>
-                                        <th>date de</th>
-                                        <th>Etat </th>
+                                        <th>Type</th>
+                                        <th>date</th>
                                         <th>Classement</th>
                                         <th>Num Archive </th>
+                                        <th>Etat </th>
 
                                     </tr>
                                 </thead>
@@ -79,7 +79,6 @@
                                             @endswitch
                                         </td>
                                         <td>{{$demande->created_at}}</td>
-                                        <td>{{$demande->etat_demande}}</td>
                                         <td>
                                             <form action="{{ route('fonctionnaire.traite_bac', $demande->id) }}" method="post">
                                                 @csrf
@@ -88,13 +87,12 @@
                                             </form>
                                         </td>
                                         <td>@php
-                                            $nums = App\Models\bac::where('codapo', $demande->codapo)->orwhere("cne",$demande->cne)->get();
+                                            $nums = App\Models\bac::where('codapo', $demande->codapo)->orwhere("cne",$demande->cne)->orwhere("cin",$demande->cin)->first();
                                             @endphp
-                                        @foreach ($nums as $num)
-                                        {{$num->num_archive}} / {{$num->annee_inscription}}
-                                        <br>
-                                        @endforeach
+                                        
+                                        {{$nums->num_archive}} / {{$nums->annee_obtention}}  -- {{$nums->serie}}
                                             </td>
+                                        <td>{{$demande->etat_demande}}</td>    
                                     </tr>
                                     @endforeach
                                 </tbody>

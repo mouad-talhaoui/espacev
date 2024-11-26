@@ -220,6 +220,7 @@ class EtudiantController extends Controller
                 $data = [
                     'codapo' => Auth::guard("etudiant")->user()->id,
                     'cne' => Auth::guard("etudiant")->user()->cne,
+                    'cin' => Auth::guard("etudiant")->user()->cin,
                     'nom' => Auth::guard("etudiant")->user()->nom,
                     'prenom' => Auth::guard("etudiant")->user()->prenom,
                     'type_demande' => $request->type_demande,
@@ -231,6 +232,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_retrait,
@@ -246,6 +248,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -262,6 +265,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -276,10 +280,11 @@ class EtudiantController extends Controller
                         'file' => 'required|mimes:pdf|max:2048',
                     ]);
                     $fileName = Auth::guard("etudiant")->user()->id.'.'.$request->file->extension();
-                    $request->file->move(public_path('assets\uploads\deug'), $fileName);
+                    $request->file->move(public_path('deug'), $fileName);
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -292,6 +297,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -304,6 +310,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -317,10 +324,11 @@ class EtudiantController extends Controller
                         'file' => 'required|mimes:pdf|max:2048',
                     ]);
                     $fileName = Auth::guard("etudiant")->user()->id.'.'.$request->file->extension();
-                    $request->file->move(public_path('assets\uploads\licence'), $fileName);
+                    $request->file->move(public_path('licence'), $fileName);
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -333,6 +341,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -346,10 +355,11 @@ class EtudiantController extends Controller
                         'file' => 'required|mimes:pdf|max:2048',
                     ]);
                     $fileName = Auth::guard("etudiant")->user()->id.'.'.$request->file->extension();
-                    $request->file->move(public_path('assets\uploads\master'), $fileName);
+                    $request->file->move(public_path('master'), $fileName);
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'type_demande' => $request->type_demande,
@@ -362,6 +372,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'code_demande' => Auth::guard("etudiant")->user()->id."-".$request->type_demande,
@@ -374,6 +385,7 @@ class EtudiantController extends Controller
                     $data = [
                         'codapo' => Auth::guard("etudiant")->user()->id,
                         'cne' => Auth::guard("etudiant")->user()->cne,
+                        'cin' => Auth::guard("etudiant")->user()->cin,
                         'nom' => Auth::guard("etudiant")->user()->nom,
                         'prenom' => Auth::guard("etudiant")->user()->prenom,
                         'code_demande' => Auth::guard("etudiant")->user()->id."-".$request->type_demande,

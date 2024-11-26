@@ -11,6 +11,7 @@ class demendeur extends Model
     protected $fillable = [
         "codapo",
         "cne",
+        "cin",
         "nom",
         "prenom",
         "type_demande",

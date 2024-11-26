@@ -51,7 +51,7 @@
                                         <td>{{$diplome->date_edition}}</td>
                                         <td>{{$diplome->date_deliberation}}</td>
                                         <td>{{$diplome->filiere_get_id->libelle_diplome}}</td>
-                                        <td><a href="{{asset('assets/uploads/licence').'/'.$diplome->codapo.'.pdf'}}" target="_blank" rel="noopener noreferrer" class="btn_success">CIN</a></td>
+                                        <td><a href="{{asset('public/licence').'/'.$diplome->codapo.'.pdf'}}" target="_blank" rel="noopener noreferrer" class="btn_success">CIN</a></td>
                                       </tr>
                                     @endforeach
                                 </tbody>

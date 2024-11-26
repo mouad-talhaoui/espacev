@@ -184,7 +184,19 @@
                                          @endswitch
                                         </td>
                                         <td>{{$demande->created_at}}</td>
-                                        <td>{{$demande->etat_demande}}</td>
+                                        <td>
+                                         @if($demande->etat_demande === 'encour' || $demande->etat_demande === 'refusé')
+                                          <p  class="bg bg-warning text-center fw-bold">En attent</p>
+                                           
+                                         @elseif($demande->etat_demande === 'en_attente')
+                                          <p  class="bg bg-info text-center fw-bold">en cours de traitement ...</p>
+                                           
+                                         @elseif($demande->etat_demande === 'prêt')
+                                          <p  class="bg bg-success text-center fw-bold">Prêt</p>
+                                          @else
+                                          <p></p>
+                                           @endif
+                                        </td>
                                         <td>
                                         @if($demande->num_archive === 'NULL')
 
@@ -194,7 +206,7 @@
                                             @if($demande->etat_demande ==="encour")
                                              <form action="{{route('etudiant.deletedemande',$demande->id)}}" method="post">
                                                 @csrf
-                                                <input type="submit" value="Delete">
+                                                <input type="submit" class="btn btn-danger ml-2" value="إلغاء الطلب">
                                              </form>
                                             @endif
                                         </td>
